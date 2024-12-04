@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestão de Estoque</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header>
+      <h1>Gestão de Estoque</h1>
+    </header>
+
+    <!-- Formulário de Pesquisa -->
+    <section>
+      <form
+        action="{{ url_for('pesquisar') }}"
+        method="POST"
+        class="form-pesquisa"
+      >
+        <label for="product_id">Pesquisar Produto (Product ID):</label>
+        <input
+          type="text"
+          id="product_id"
+          name="product_id"
+          placeholder="Digite o Product ID"
+          required
+        />
+        <button type="submit">Pesquisar</button>
+      </form>
+    </section>
+
+    <!-- Botão Adicionar Produto -->
+    <section>
+      <a href="{{ url_for('adicionar') }}" class="btn-adicionar"
+        >Adicionar Produto</a
+      >
+    </section>
+
+    <!-- Tabela de Produtos -->
+    <section>
+      <table>
+        <tr>
+          <th>User ID</th>
+          <th>Product ID</th>
+          <th>Product Name</th>
+          <th>Brand</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Rating</th>
+          <th>Color</th>
+          <th>Size</th>
+          <th>Ações</th>
+        </tr>
+        {% for produto in produtos %}
+        <tr>
+          <td>{{ produto['User ID'] }}</td>
+          <td>{{ produto['Product ID'] }}</td>
+          <td>{{ produto['Product Name'] }}</td>
+          <td>{{ produto['Brand'] }}</td>
+          <td>{{ produto['Category'] }}</td>
+          <td>{{ produto['Price'] }}</td>
+          <td>{{ produto['Rating'] }}</td>
+          <td>{{ produto['Color'] }}</td>
+          <td>{{ produto['Size'] }}</td>
+          <td>
+            <!-- Link para atualizar o produto -->
+            <a
+              href="{{ url_for('atualizar', product_id=produto['Product ID']) }}"
+              class="btn-atualizar"
+              >Atualizar</a
+            >
+            <!-- Formulário para excluir o produto -->
+            <form
+              action="{{ url_for('excluir', product_id=produto['Product ID']) }}"
+              method="POST"
+              style="display: inline"
+            >
+              <button type="submit" class="btn-excluir">Excluir</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </section>
+  </body>
+</html>

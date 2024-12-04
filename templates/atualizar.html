@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Produto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Atualizar Produto</h1>
+    </header>
+    <section>
+        <form action="{{ url_for('atualizar', product_id=produto['Product ID']) }}" method="POST">
+            <label for="product_name">Product Name:</label>
+            <input type="text" id="product_name" name="product_name" value="{{ produto['Product Name'] }}" required>
+
+            <label for="brand">Brand:</label>
+            <input type="text" id="brand" name="brand" value="{{ produto['Brand'] }}" required>
+
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" value="{{ produto['Category'] }}" required>
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" value="{{ produto['Price'] }}" step="0.01" required>
+
+            <label for="rating">Rating:</label>
+            <input type="number" id="rating" name="rating" value="{{ produto['Rating'] }}" step="0.1" required>
+
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color" value="{{ produto['Color'] }}" required>
+
+            <label for="size">Size:</label>
+            <input type="text" id="size" name="size" value="{{ produto['Size'] }}" required>
+
+            <button type="submit">Atualizar Produto</button>
+        </form>
+        <br>
+        <!-- Botão Voltar -->
+        <a href="{{ url_for('index') }}" class="btn-voltar">Voltar</a>
+    </section>
+</body>
+</html>

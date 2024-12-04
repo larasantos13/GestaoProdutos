@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pesquisar Produto</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Detalhes do Produto</h1>
+    </header>
+
+    <section>
+      {% if produto %}
+      <table>
+        <tr>
+          <th>User ID</th>
+          <th>Product ID</th>
+          <th>Product Name</th>
+          <th>Brand</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Rating</th>
+          <th>Color</th>
+          <th>Size</th>
+        </tr>
+        <tr>
+          <td>{{ produto['User ID'] }}</td>
+          <td>{{ produto['Product ID'] }}</td>
+          <td>{{ produto['Product Name'] }}</td>
+          <td>{{ produto['Brand'] }}</td>
+          <td>{{ produto['Category'] }}</td>
+          <td>{{ produto['Price'] }}</td>
+          <td>{{ produto['Rating'] }}</td>
+          <td>{{ produto['Color'] }}</td>
+          <td>{{ produto['Size'] }}</td>
+        </tr>
+      </table>
+      {% else %}
+      <p>Produto não encontrado.</p>
+      {% endif %}
+      <a href="{{ url_for('index') }}" class="btn-voltar">Voltar</a>
+    </section>
+  </body>
+</html>

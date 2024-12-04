@@ -1,0 +1,260 @@
+/* ======================== */
+/* Estilo Global e Estrutural */
+/* ======================== */
+
+/* Define a fonte padrão, cor de fundo e remove margens/padding */
+body {
+  font-family: "Times New Roman", Times, serif; /* Fonte padrão */
+  background-color: hsl(240, 6%, 86%); /* Cor de fundo */
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove padding padrão */
+}
+
+/* ======================== */
+/* Estilo do Cabeçalho */
+/* ======================== */
+
+/* Define o estilo do cabeçalho da página */
+header {
+  background-color: #007bff; /* Fundo azul */
+  color: white; /* Texto branco */
+  text-align: center; /* Centraliza o texto */
+  padding: 20px 0; /* Espaçamento interno vertical */
+}
+
+header h1 {
+  margin: 0; /* Remove margens ao redor do título */
+  font-size: 2em; /* Tamanho do título */
+}
+
+/* ======================== */
+/* Estilo Geral de Botões */
+/* ======================== */
+
+/* Botões padrão e botões estilizados */
+button,
+.btn-adicionar {
+  background-color: #007bff; /* Fundo azul */
+  color: white; /* Texto branco */
+  font-weight: bold; /* Texto em negrito */
+  padding: 10px 20px; /* Espaçamento interno */
+  border: none; /* Remove borda */
+  cursor: pointer; /* Cursor interativo */
+  transition: background-color 0.3s ease; /* Suavização ao passar o mouse */
+  border-radius: 5px; /* Bordas arredondadas */
+  text-decoration: none; /* Remove sublinhado */
+  margin-top: -19px; /* Subir o botão */
+}
+
+button:hover,
+.btn-adicionar:hover {
+  background-color: #0056b3; /* Azul mais escuro */
+}
+
+button:disabled {
+  background-color: #cfcfcf; /* Cinza claro */
+  cursor: not-allowed; /* Cursor bloqueado */
+}
+
+/* Botão específico para "Adicionar Produto" */
+.btn-adicionar {
+  float: right; /* Alinha o botão à direita */
+  margin-bottom: 15px; /* Espaçamento inferior */
+}
+
+/* ======================== */
+/* Estilo de Links de Ações */
+/* ======================== */
+
+/* Links de "Atualizar" e "Excluir" */
+table td a {
+  color: #007bff; /* Azul */
+  text-decoration: underline; /* Sublinhado */
+  font-weight: bold; /* Texto em negrito */
+  cursor: pointer; /* Cursor interativo */
+}
+
+table td a:hover {
+  color: #0056b3; /* Azul mais escuro */
+}
+
+/* Botão Excluir sem efeitos */
+.btn-excluir {
+  background-color: transparent; /* Sem fundo */
+  color: #007bff; /* Azul */
+  border: none; /* Remove borda */
+  font-weight: bold; /* Texto em negrito */
+  text-decoration: underline; /* Sublinhado */
+  cursor: pointer; /* Mostra o cursor "mãozinha" */
+  margin: 0; /* Sem margens */
+  padding: 0; /* Sem padding */
+  outline: none; /* Remove contorno padrão */
+  box-shadow: none; /* Remove sombra padrão */
+}
+
+/* Remover qualquer alteração ao passar o mouse */
+.btn-excluir:hover,
+.btn-excluir:focus {
+  color: #007bff; /* Mantém a cor azul original */
+  text-decoration: underline; /* Mantém o sublinhado */
+  outline: none; /* Remove contorno */
+  box-shadow: none; /* Remove qualquer sombra */
+  background-color: transparent; /* Garante que não há fundo */
+}
+
+/* Botão "Atualizar" */
+.btn-atualizar {
+  background-color: transparent; /* Sem fundo */
+  color: #007bff; /* Azul */
+  border: none; /* Remove borda */
+  text-decoration: underline; /* Sublinhado */
+  cursor: pointer; /* Cursor interativo */
+}
+
+/* Estilo para o botão Voltar */
+.btn-voltar {
+  display: inline-block;
+  background-color: #6c757d; /* Cinza */
+  color: white; /* Texto branco */
+  font-size: 1em;
+  padding: 10px 20px; /* Espaçamento interno */
+  border: none; /* Remove borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  text-decoration: none; /* Remove sublinhado */
+  cursor: pointer; /* Mostra o cursor "mãozinha" */
+  transition: background-color 0.3s ease; /* Transição suave */
+}
+
+/* Efeito hover para o botão Voltar */
+.btn-voltar:hover {
+  background-color: #5a6268; /* Cinza mais escuro */
+}
+
+/* ======================== */
+/* Estilo da Tabela de Produtos */
+/* ======================== */
+
+/* Container da tabela */
+section {
+  margin: 20px; /* Espaçamento externo */
+  padding: 20px; /* Espaçamento interno */
+  background-color: white; /* Fundo branco */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  border-radius: 8px; /* Bordas arredondadas */
+}
+
+table {
+  width: 100%; /* Largura total */
+  border-collapse: collapse; /* Remove espaçamento entre células */
+  margin-top: 20px; /* Espaçamento superior */
+}
+
+table th,
+table td {
+  padding: 12px; /* Espaçamento interno */
+  text-align: left; /* Texto alinhado à esquerda */
+  border-bottom: 1px solid #ddd; /* Linha inferior de separação */
+}
+
+table th {
+  background-color: #007bff; /* Fundo azul */
+  color: white; /* Texto branco */
+}
+
+table td {
+  background-color: #f9f9f9; /* Fundo cinza claro */
+}
+
+table tr:nth-child(even) td {
+  background-color: #f1f1f1; /* Fundo alternado */
+}
+
+table tr:hover td {
+  background-color: #e2e2e2; /* Destaque ao passar o mouse */
+}
+
+/* ======================== */
+/* Estilo dos Formulários */
+/* ======================== */
+
+/* Container do formulário */
+form {
+  margin-top: 20px; /* Espaçamento superior */
+}
+
+form label {
+  display: block; /* Rótulos em linha única */
+  font-weight: bold; /* Texto em negrito */
+  margin-bottom: 5px; /* Espaçamento inferior */
+  color: #333; /* Texto cinza escuro */
+}
+
+form input {
+  width: 100%; /* Largura total */
+  padding: 10px; /* Espaçamento interno */
+  margin-bottom: 15px; /* Espaçamento inferior */
+  border: 1px solid #ddd; /* Borda cinza clara */
+  border-radius: 5px; /* Bordas arredondadas */
+  font-size: 1em; /* Tamanho da fonte */
+  background-color: #f9f9f9; /* Fundo cinza claro */
+}
+
+/* ======================== */
+/* Responsividade */
+/* ======================== */
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5em; /* Reduz tamanho do título */
+  }
+
+  table th,
+  table td {
+    padding: 8px; /* Reduz padding */
+  }
+
+  form input,
+  form button {
+    padding: 8px; /* Reduz padding de campos e botões */
+  }
+
+  .btn-adicionar {
+    font-size: 0.9em; /* Reduz fonte do botão */
+  }
+
+  table {
+    font-size: 0.9em; /* Reduz tamanho do texto na tabela */
+  }
+}
+
+/* Estilo do Formulário de Pesquisa */
+.form-pesquisa {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px; /* Espaçamento entre os elementos */
+}
+
+.form-pesquisa label {
+  font-weight: bold;
+}
+
+.form-pesquisa input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.form-pesquisa button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-pesquisa button:hover {
+  background-color: #0056b3;
+}
